@@ -1,5 +1,6 @@
 module SessionsHelper
 
+<<<<<<< c1d4ec6b3d9de6a5800eab220d35830a099fd1bc
           def remember(user)
             user.remember
             cookies.permanent.signed[:user_id] = user.id
@@ -35,3 +36,12 @@ module SessionsHelper
               @current_user = nil
           end  
     end
+=======
+      def logged_in_user
+        unless logged_in?
+          flash[:notice] = "Please log in"
+          redirect_to login_url
+        end
+    end 
+end 
+>>>>>>> User microposting feature
